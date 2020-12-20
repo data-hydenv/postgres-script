@@ -1,0 +1,33 @@
+name: Compile document
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install
+        run: sudo apt install textlive-latex-base
+
+      # compile
+      - name: Compile
+        run: | 
+          pdflatex main.tex
+          mv main.pdf PostgreScript.pdf
+          
+      - name: add and commit
+        uses: EndBug/add-and-commit@latest
+        with:
+          add: PostgresScript.pdf
+          message: Compiled tex to PDF
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
