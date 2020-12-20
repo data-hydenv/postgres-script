@@ -19,14 +19,15 @@ jobs:
 
       # compile
       - name: Compile
-        run: | 
-          pdflatex main.tex
-          mv main.pdf PostgreScript.pdf
+        run: pdflatex main.tex
+          
+      - name: Rename
+        run: mv main.pdf PostgreScript.pdf
           
       - name: add and commit
         uses: EndBug/add-and-commit@latest
         with:
-          add: PostgresScript.pdf
+          add: PostgreScript.pdf
           message: Compiled tex to PDF
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
