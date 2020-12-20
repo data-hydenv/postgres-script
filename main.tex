@@ -1,5 +1,8 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{hyperref}
+
 
 \title{PostgreSQL Script}
 \author{contributors}
@@ -11,14 +14,25 @@
 
 \section{About this document}
 
-\section{Getting Started}
+This document is supplementary material for the \textit{data storage - databases} part of the \textit{data management} lecture at the University Freiburg. 
+This document defines just a few drafted points and broad structure and will be extended and compiled by the students taking the lecture. It is hosted on Github and any student with access to the Github organization associated to the lecture has the right to extend this document.
 
-\section{Introduction to SQL}
+While working on this document you should also learn something about versioning, collaborative coding and effective development strategies. 
+In case every student will write into this document just like this, it would turn rather messy quite quickly.\\
+Thus, we implement the work on this document, like you would do it in medium and large coding project. 
+But at the advantage that working on a text file, we move the focus away from the code onto the tools git and Github offer us. In practice this means, that no one is allowed to commit to the master branch containing this document. 
+But you can open as many branches as you like. Changes are therefore only made to copies of the master document. Each student (or group of students) makes the notes on one of the videos in an isolated branch. 
+Before these changes are made available to everyone, a \textit{review} of another student(s) is necessary to approve the changes. 
+To keep track on who is working on what, the lecture instructor will open a number of issues with work that has to be covered. Anyone can assign himself to any open issue and work on it. Help is available by just naming the instructor in an issue conversation.\\
+Finally, this is \textbf{your} document. Beside the existing issues, you can open as many new issues as you might need to turn this script into a helpful resource for you and future student generations.
 
-\section{Normalization}
 
-\section{Relations}
+%% Add the student content chapters
+\include{getting_started}
+\include{introduction}
+\include{normalization}
+\include{relations}
+\include{spatial_data}
 
-\section{Spatial Data}
 
 \end{document}
